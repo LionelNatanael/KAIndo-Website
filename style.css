@@ -5,32 +5,30 @@
   --black: #000000;
   --white: #f3fcff;
   --radius: 20px;
-  --font-family: "Poppins", sans-serif;
+  --font: "Poppins", sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-family);
+  font-family: var(--font);
   background-color: var(--white);
   color: var(--black);
-  line-height: 1.6;
+  margin: 0;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--cream);
+  background: var(--cream);
   padding: 15px 30px;
   border-radius: 0 0 var(--radius) var(--radius);
   position: sticky;
   top: 0;
-  z-index: 10;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: bold;
   color: var(--brown);
 }
@@ -46,7 +44,7 @@ body {
   color: var(--black);
 }
 
-/* Hero */
+/* HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -55,42 +53,100 @@ body {
   animation: fadeIn 2s ease;
 }
 
-/* Sections */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
 h2 {
   color: var(--brown);
 }
 
-.values, .menu-grid, .team-grid {
+/* VALUES */
+.values {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.value-card, .menu-card, .member {
-  background-color: var(--cream);
+.value-card {
+  background: var(--cream);
   padding: 20px;
   border-radius: var(--radius);
   width: 250px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* MENU SECTIONS */
+.menu {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.menu-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.menu-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.menu-text {
+  flex: 1;
+  max-width: 350px;
+  text-align: left;
+}
+
+.menu-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-images {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-images img {
+  width: 180px;
+  height: 180px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s;
 }
 
-.value-card:hover, .menu-card:hover, .member:hover {
-  transform: translateY(-5px);
+.menu-images img:hover {
+  transform: scale(1.05);
 }
 
+/* TEAM */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.member {
+  background: var(--cream);
+  padding: 20px;
+  border-radius: var(--radius);
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
 .contact a {
   color: var(--brown);
   text-decoration: none;
 }
 
+/* FOOTER */
 footer {
   background-color: var(--cream);
   padding: 20px;
@@ -98,12 +154,12 @@ footer {
   border-radius: var(--radius) var(--radius) 0 0;
 }
 
-/* Chatbot */
+/* CHATBOT */
 #chatbot-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--brown);
+  background: var(--brown);
   color: white;
   font-size: 24px;
   padding: 15px;
@@ -121,11 +177,11 @@ footer {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  animation: slideUp 0.3s ease;
 }
 
 #chatbot.active {
   display: block;
+  animation: slideUp 0.4s ease;
 }
 
 .chat-header {
@@ -160,4 +216,11 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-section {
+    flex-direction: column;
+  }
 }
